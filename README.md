@@ -1,2 +1,8 @@
 # mac-dotfiles
-My attempt on showing Pao that my Catppuccin setup eats and ~~defecates~~ his Gruvbox setup.
+This setup includes configurations for:
+- Shell: Zsh, managed with Oh My Zsh.
+- Terminal: iTerm2.
+- Editor: Neovim, using the LazyVim distribution.
+- Version Control: Git.
+
+
