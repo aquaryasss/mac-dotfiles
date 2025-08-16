@@ -1,0 +1,5 @@
+# Ignore the Oh My Zsh framework directory
+.oh-my-zsh/
+
+# Ignore system-specific files
+.DS_Store
