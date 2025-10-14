@@ -118,3 +118,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+
