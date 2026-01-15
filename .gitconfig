@@ -3,3 +3,7 @@
 	email = nicoletereine@gmail.com
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false
+[core]
+	excludesfile = /Users/nicoletereineguarin/.gitignore_global

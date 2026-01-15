@@ -3,3 +3,6 @@
 
 # Ignore system-specific files
 .DS_Store
+
+# Ignore gh authentication tokens
+gh/hosts.yml
