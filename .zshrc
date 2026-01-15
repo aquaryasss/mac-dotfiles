@@ -116,8 +116,17 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Catppuccin Mocha Syntax Highlighting Colors
+ZSH_HIGHLIGHT_STYLES[command]='fg=4'          # Blue (Commands like 'git' or 'ls')
+ZSH_HIGHLIGHT_STYLES[alias]='fg=115'            # Green (Aliases you've created)
+ZSH_HIGHLIGHT_STYLES[path]='fg=183'             # Mauve (File paths)
+ZSH_HIGHLIGHT_STYLES[string]='fg=13'           # Pink (Text inside "quotes")
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=131'    # Red (Errors/Invalid commands)
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=4'             # Blue (Command arguments)
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+
 
