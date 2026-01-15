@@ -5,4 +5,4 @@
 .DS_Store
 
 # Ignore gh authentication tokens
-gh/hosts.yml
+.config/gh/hosts.yml
