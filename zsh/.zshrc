@@ -18,6 +18,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Standard Apple Silicon Homebrew initialization
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Standard paths for your tools
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.14/libexec/bin:$PATH"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -83,6 +90,16 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+# --- Developer Environment ---
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# Aliases for easier workflow
+alias v="nvim"
+alias py="python3"
+alias pip="pip3"
+alias dots="cd ~/.dotfiles"
+alias reload="source ~/.zshrc"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -111,13 +128,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Catppuccin Mocha Syntax Highlighting Colors
 ZSH_HIGHLIGHT_STYLES[command]='fg=4'          # Blue (Commands like 'git' or 'ls')
 ZSH_HIGHLIGHT_STYLES[alias]='fg=115'            # Green (Aliases you've created)
@@ -125,8 +142,4 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=183'             # Mauve (File paths)
 ZSH_HIGHLIGHT_STYLES[string]='fg=13'           # Pink (Text inside "quotes")
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=131'    # Red (Errors/Invalid commands)
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=4'             # Blue (Command arguments)
-
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH="$HOME/Library/Python/3.9/bin:$PATH"
-
 
