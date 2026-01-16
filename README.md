@@ -20,11 +20,3 @@ git clone git@github.com:aquaryasss/mac-dotfiles.git
 cd ~/.dotfiles
 ./setup.sh
 ```
-
-
-```
-```
-```
-```
-
-
