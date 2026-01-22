@@ -24,6 +24,7 @@ yabai -m config focus_follows_mouse off
 yabai -m config window_shadow off
 yabai -m config external_bar all:32:0
 yabai -m config window_origin_display default
+yabai -m config window_border_radius 0
 
 # 4. Floating Rules (Prevent utility apps from breaking the grid)
 yabai -m rule --add app="^System Settings$" manage=off
@@ -38,6 +39,6 @@ yabai -m rule --apply
 
 # 5. JankyBorders Integration
 # Catppuccin Blue for active window, Surface1 for inactive
-borders active_color=0xfff5bde6 inactive_color=0xff494d64 width=6.0 &
+borders active_color=0xfff5bde6 inactive_color=0xff494d64 width=6.0 style=square &
 
 echo "yabai configuration loaded.."
