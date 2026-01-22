@@ -17,7 +17,9 @@ sketchybar --default updates=on \
     icon.color=$WHITE \
     label.color=$WHITE \
     padding_left=10 \
-    padding_right=10
+    padding_right=10 \
+    icon.padding_right=4 \
+    label.padding_left=4
 
 # --- LEFT SIDE ---
 # 1. Space Indicators (Minimalist Dots)
@@ -39,27 +41,33 @@ sketchybar --add item front_app left \
     script="sketchybar --set \$NAME label=\"\$(lsappinfo info -only name \$(lsappinfo front) | sed 's/\"//g' | awk -F= '{print \$2}')\"" \
     --subscribe front_app front_app_switched
 
-# --- RIGHT SIDE --- (Keep your working modules)
-sketchybar --add item volume right \
-    --set volume update_freq=5 icon=􀊩 icon.color=$PINK \
-    script="sketchybar --set \$NAME label=\"$(osascript -e 'output volume of (get volume settings)')%\""
-
-sketchybar --add item cpu right \
-    --set cpu update_freq=2 icon=􀫥 icon.color=$PINK \
-    script="sketchybar --set \$NAME label=\"$(top -l 2 | grep -E '^CPU' | tail -1 | awk '{print $3 + $5}')%\""
-
-sketchybar --add item battery right \
-    --set battery update_freq=60 icon=􀛨 icon.color=$PINK \
-    script="sketchybar --set \$NAME label=\"$(pmset -g batt | grep -Eo '[0-9]+%')\""
-
-sketchybar --add item clock right \
-    --set clock update_freq=10 icon=􀐫 icon.color=$PINK \
-    script="sketchybar --set \$NAME label=\"$(date '+%H:%M')\""
-
+# --- RIGHT SIDE ---
+# Date
 sketchybar --add item date right \
     --set date update_freq=3600 \
-    icon=􀉉 \
-    icon.color=$PINK \
+    icon=􀉉 icon.color=$PINK icon.padding_right=6 \
+    label.padding_left=2 \
     script="sketchybar --set \$NAME label=\"$(date '+%a, %b %d')\""
+
+# Clock
+sketchybar --add item clock right \
+    --set clock update_freq=10 \
+    icon=􀐫 icon.color=$PINK icon.padding_right=6 \
+    label.padding_left=2 \
+    script="sketchybar --set \$NAME label=\"$(date '+%H:%M')\""
+
+# Battery
+sketchybar --add item battery right \
+    --set battery update_freq=60 \
+    icon=􀛨 icon.color=$PINK icon.padding_right=6 \
+    label.padding_left=2 \
+    script="sketchybar --set \$NAME label=\"$(pmset -g batt | grep -Eo '[0-9]+%')\""
+
+# CPU
+sketchybar --add item cpu right \
+    --set cpu update_freq=2 \
+    icon=􀫥 icon.color=$PINK icon.padding_right=6 \
+    label.padding_left=2 \
+    script="sketchybar --set \$NAME label=\"$(top -l 2 | grep -E '^CPU' | tail -1 | awk '{print $3 + $5}')%\""
 
 sketchybar --update
