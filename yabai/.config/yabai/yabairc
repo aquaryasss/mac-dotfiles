@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# ==============================================================================
+# YABAI CONFIGURATION
+# ==============================================================================
+
+# 1. Global Layout Settings
+# Binary Space Partitioning (Tiling Mode)
+yabai -m config layout bsp
+yabai -m config window_placement second_child
+yabai -m config window_shadow off
+yabai -m config split_ratio 0.50
+
+# 2. Gaps and Padding (The "Rice" look)
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 5
+
+# 3. Window Behavior & Appearance
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse off
+yabai -m config window_shadow off
+yabai -m config external_bar all:32:0
+yabai -m config window_origin_display default
+
+# 4. Floating Rules (Prevent utility apps from breaking the grid)
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^TickTick$" manage=off
+
+# Force-apply all rules to currently open windows
+yabai -m rule --apply
+
+# 5. JankyBorders Integration
+# Catppuccin Blue for active window, Surface1 for inactive
+borders active_color=0xfff5bde6 inactive_color=0xff494d64 width=6.0 &
+
+echo "yabai configuration loaded.."

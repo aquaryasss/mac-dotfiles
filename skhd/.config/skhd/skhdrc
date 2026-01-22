@@ -1,0 +1,29 @@
+# ==============================================================================
+# SKHD HOTKEY CONFIGURATION (Vim hjkl Directions)
+# ==============================================================================
+
+# Focus windows (Option + hjkl)
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# Swap windows (Shift + Option + hjkl)
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# Rotate space (Option + R)
+alt - r : yabai -m space --rotate 90
+
+# Toggle Window Float (Option + T)
+alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# Toggle between BSP (tiling) and Stack (full screen) layouts
+alt - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .layout == "bsp" then "stack" else "bsp" end')
+
+# Restart Services / Hot-Reload (Option + Shift + R)
+alt + shift - r : yabai --restart-service; skhd --restart-service; brew services restart borders
+
+echo "skhd configuration loaded.."
