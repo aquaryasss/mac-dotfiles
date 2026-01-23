@@ -33,6 +33,7 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^TickTick$" manage=off
+yabai -m rule --add app="^Messages$" manage=on
 
 # Force-apply all rules to currently open windows
 yabai -m rule --apply
@@ -41,4 +42,4 @@ yabai -m rule --apply
 # Catppuccin Blue for active window, Surface1 for inactive
 borders active_color=0xfff5bde6 inactive_color=0xff494d64 width=6.0 style=square &
 
-echo "yabai configuration loaded.."
+# echo "yabai configuration loaded.."

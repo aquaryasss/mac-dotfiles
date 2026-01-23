@@ -41,6 +41,13 @@ sketchybar --add item front_app left \
     script="sketchybar --set \$NAME label=\"\$(lsappinfo info -only name \$(lsappinfo front) | sed 's/\"//g' | awk -F= '{print \$2}')\"" \
     --subscribe front_app front_app_switched
 
+sketchybar --add item app_counter left \
+    --set app_counter icon=􀏦 \
+    icon.color=$PINK \
+    label.padding_left=4 \
+    script="$CONFIG_DIR/items/app_counter.sh" \
+    --subscribe app_counter window_created window_destroyed
+
 # --- RIGHT SIDE ---
 # Date
 sketchybar --add item date right \

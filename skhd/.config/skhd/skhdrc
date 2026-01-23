@@ -24,6 +24,11 @@ alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 alt - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .layout == "bsp" then "stack" else "bsp" end')
 
 # Restart Services / Hot-Reload (Option + Shift + R)
-alt + shift - r : yabai --restart-service; skhd --restart-service; brew services restart borders
+# The Robust Global Reset
+alt + shift - r : yabai --restart-service; sleep 1; skhd --restart-service; sleep 1; brew services restart borders
+
+# Expand/Shrink the active window's area (The "Puzzle Shifter")
+alt + shift - a : yabai -m window --ratio rel:-0.05
+alt + shift - s : yabai -m window --ratio rel:0.05
 
 # echo "skhd configuration loaded.."
