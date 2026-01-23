@@ -62,9 +62,12 @@ sketchybar --add item clock right \
 # Battery
 sketchybar --add item battery right \
     --set battery update_freq=60 \
-    icon=􀛨 icon.color=$PINK icon.padding_right=6 \
+    icon=􀛨 \
+    icon.color=$PINK \
+    icon.padding_right=6 \
     label.padding_left=2 \
-    script="sketchybar --set \$NAME label=\"$(pmset -g batt | grep -Eo '[0-9]+%')\""
+    script="$CONFIG_DIR/items/battery.sh" \
+    --subscribe battery power_source_change system_woke
 
 # CPU
 sketchybar --add item cpu right \
