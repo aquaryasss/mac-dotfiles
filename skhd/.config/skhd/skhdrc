@@ -26,4 +26,4 @@ alt - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if 
 # Restart Services / Hot-Reload (Option + Shift + R)
 alt + shift - r : yabai --restart-service; skhd --restart-service; brew services restart borders
 
-echo "skhd configuration loaded.."
+# echo "skhd configuration loaded.."
