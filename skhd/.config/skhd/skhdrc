@@ -45,4 +45,7 @@ alt + shift - r : yabai --restart-service; sleep 1; skhd --restart-service; slee
 cmd + shift - a : yabai -m window --ratio rel:-0.05
 cmd + shift - s : yabai -m window --ratio rel:0.05
 
+# Launch Yazi in a new iTerm2 window 
+shift + alt - f : open -a iTerm . --args -e yazi
+
 # echo "skhd configuration loaded.."

@@ -143,3 +143,5 @@ ZSH_HIGHLIGHT_STYLES[string]='fg=13'           # Pink (Text inside "quotes")
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=131'    # Red (Errors/Invalid commands)
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=4'             # Blue (Command arguments)
 
+export YAZI_CONFIG_HOME="$HOME/.config/yazi"
+export YAZI_CONFIG_HOME="$HOME/.config/yazi"
